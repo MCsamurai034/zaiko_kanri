@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'products#index'
+  root 'stocks#index'
   resources :products
   resources :shelters
   resources :supplies
