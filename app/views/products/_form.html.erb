@@ -22,13 +22,13 @@
   </div>
 
   <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
   </div>
 
   <div>
-    <%= form.label :stock, style: "display: block" %>
-    <%= form.number_field :stock %>
+    <%= form.label :supply_id, style: "display: block" %>
+    <%= form.collection_select :supply_id, Supply.all, :id, :name, prompt: "Select a Supply" %>
   </div>
 
   <div>
