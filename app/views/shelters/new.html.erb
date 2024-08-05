@@ -1,2 +1,9 @@
-<h1>Shelters#new</h1>
-<p>Find me in app/views/shelters/new.html.erb</p>
+<h1>New shelter</h1>
+
+<%= render "form", shelter: @shelter %>
+
+<br>
+
+<div>
+  <%= link_to "Back to shelters", shelters_path %>
+</div>

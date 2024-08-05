@@ -1,2 +1,10 @@
-<h1>Transactions#show</h1>
-<p>Find me in app/views/transactions/show.html.erb</p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @transaction %>
+
+<div>
+  <%= link_to "Edit this transaction", edit_transaction_path(@transaction) %> |
+  <%= link_to "Back to transactions", transactions_path %>
+
+  <%= button_to "Destroy this transaction", @transaction, method: :delete %>
+</div>

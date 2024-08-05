@@ -1,2 +1,10 @@
-<h1>Shelters#show</h1>
-<p>Find me in app/views/shelters/show.html.erb</p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @shelter %>
+
+<div>
+  <%= link_to "Edit this shelter", edit_shelter_path(@shelter) %> |
+  <%= link_to "Back to shelters", shelters_path %>
+
+  <%= button_to "Destroy this shelter", @shelter, method: :delete %>
+</div>

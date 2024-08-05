@@ -1,0 +1,49 @@
+<%= form_with(model: transaction) do |form| %>
+  <% if transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :transaction_type, style: "display: block" %>
+    <div>
+      <%= form.radio_button :transaction_type, "IN" %>
+      <%= form.label :transaction_type_IN, "IN" %>
+    </div>
+    <div>
+      <%= form.radio_button :transaction_type, "OUT" %>
+      <%= form.label :transaction_type_OUT, "OUT" %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label :transaction_date, style: "display: block" %>
+    <%= form.date_field :transaction_date %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :product_id, style: "display: block" %>
+    <%= form.collection_select :product_id, Product.all, :id, :name, prompt: "Select a Product" %>
+  </div>
+
+  <div>
+    <%= form.label :shelter_id, style: "display: block" %>
+    <%= form.collection_select :shelter_id, Shelter.all, :id, :name, prompt: "Select a Shelter" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

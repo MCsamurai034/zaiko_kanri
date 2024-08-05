@@ -1,2 +1,9 @@
-<h1>Stocks#new</h1>
-<p>Find me in app/views/stocks/new.html.erb</p>
+<h1>New stock</h1>
+
+<%= render "form", stock: @stock %>
+
+<br>
+
+<div>
+  <%= link_to "Back to stocks", stocks_path %>
+</div>
