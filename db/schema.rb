@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_02_091350) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_05_173248) do
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -25,6 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_02_091350) do
     t.datetime "updated_at", null: false
     t.float "quantity"
     t.bigint "supply_id", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["supply_id"], name: "index_products_on_supply_id"
   end
 
@@ -64,14 +66,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_02_091350) do
     t.date "transaction_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "supply_id"
     t.index ["product_id"], name: "index_transactions_on_product_id"
     t.index ["shelter_id"], name: "index_transactions_on_shelter_id"
+    t.index ["supply_id"], name: "index_transactions_on_supply_id"
   end
 
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "supplies"
   add_foreign_key "stocks", "shelters"
   add_foreign_key "stocks", "supplies"
   add_foreign_key "supplies", "categories"
   add_foreign_key "transactions", "products"
   add_foreign_key "transactions", "shelters"
+  add_foreign_key "transactions", "supplies"
 end
