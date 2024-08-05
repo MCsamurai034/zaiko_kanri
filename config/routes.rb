@@ -1,41 +1,11 @@
 Rails.application.routes.draw do
-  get 'transactions/index'
-  get 'transactions/show'
-  get 'transactions/new'
-  get 'transactions/create'
-  get 'transactions/edit'
-  get 'transactions/update'
-  get 'transactions/destroy'
-  get 'stocks/index'
-  get 'stocks/show'
-  get 'stocks/new'
-  get 'stocks/create'
-  get 'stocks/edit'
-  get 'stocks/update'
-  get 'stocks/destroy'
-  get 'supplies/index'
-  get 'supplies/show'
-  get 'supplies/new'
-  get 'supplies/create'
-  get 'supplies/edit'
-  get 'supplies/update'
-  get 'supplies/destroy'
-  get 'categories/index'
-  get 'categories/show'
-  get 'categories/new'
-  get 'categories/create'
-  get 'categories/edit'
-  get 'categories/update'
-  get 'categories/destroy'
-  get 'shelters/index'
-  get 'shelters/show'
-  get 'shelters/new'
-  get 'shelters/create'
-  get 'shelters/edit'
-  get 'shelters/update'
-  get 'shelters/destroy'
   root 'products#index'
   resources :products
+  resources :shelters
+  resources :supplies
+  resources :stocks
+  resources :categories
+  resources :transactions
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
