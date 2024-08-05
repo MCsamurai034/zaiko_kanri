@@ -1,14 +1,29 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
 .container {
     display: flex;
+    height: 100%;
   }
   
   .sidebar {
-    width: 200px;
-    background-color: #f8f9fa;
+    width: 250px;
+    background-color: #bdf2ff;
     padding: 10px;
+    height: 100%;
+
+    font-family: 'Arial, sans-serif'; /* Change to your desired font */
+    font-size: 25px;
+
+    ul {
+        list-style-type: none;
+        padding: 5; /* Remove default padding */
+      }
   }
   
   .main-content {
     flex-grow: 1;
-    padding: 10px;
+    padding: 30px;
   }
