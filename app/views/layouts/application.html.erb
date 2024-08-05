@@ -10,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container">
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+      <ul>
+      <li><%= link_to 'Products', products_path %></li>
+      <li><%= link_to 'Supplies', supplies_path %></li>
+      <li><%= link_to 'Shelters', shelters_path %></li>
+      <li><%= link_to 'Stocks', stocks_path %></li>
+      <li><%= link_to 'Transactions', transactions_path %></li>
+      <li><%= link_to 'Categories', categories_path %></li>
+      </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+      <%= yield %>
+    </div>
+  </div>
   </body>
 </html>
