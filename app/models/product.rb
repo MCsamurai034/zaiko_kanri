@@ -16,10 +16,7 @@ class Product < ApplicationRecord
     end
 
     def collect_related_transaction
-        products = Product.where(supply_id: self.id).includes(:transactions)
-        related_transactions = products.flat_map(&:transactions)
-
-        related_transactions
+        related_transactions = Transaction.where(product_id: self.id)
     end
 
     def total_stock
