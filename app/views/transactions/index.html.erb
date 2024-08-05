@@ -1,2 +1,31 @@
-<h1>Transactions#index</h1>
-<p>Find me in app/views/transactions/index.html.erb</p>
+<h1>Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product Id</th>
+      <th>Shelter Id</th>
+      <th>Transaction Type</th>
+      <th>Transaction Date</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.product_id %></td>
+        <td><%= transaction.shelter_id %></td>
+        <td><%= transaction.transaction_type %></td>
+        <td><%= transaction.transaction_date %></td>
+        <td><%= transaction.quantity %></td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New transaction', new_transaction_path %>

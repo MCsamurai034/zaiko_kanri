@@ -1,2 +1,29 @@
-<h1>Supplies#index</h1>
-<p>Find me in app/views/supplies/index.html.erb</p>
+<h1>Supplies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desctription</th>
+      <th>Unit</th>
+      <th>Category Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supplies.each do |supply| %>
+      <tr>
+        <td><%= supply.name %></td>
+        <td><%= supply.description %></td>
+        <td><%= supply.unit %></td>
+        <td><%= supply.category_id %></td>
+        <td><%= link_to 'Show', supply %></td>
+        <td><%= link_to 'Edit', edit_supply_path(supply) %></td>
+        <td><%= link_to 'Destroy', supply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New supply', new_supply_path %>
