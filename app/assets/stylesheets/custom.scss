@@ -14,11 +14,12 @@ html, body {
     padding: 10px;
     height: 100%;
 
-    font-family: 'Arial, sans-serif'; /* Change to your desired font */
+    font-family: "Hiragino Kaku Gothic Pro";
     font-size: 25px;
 
-    ul {
+    ul,li,a {
         list-style-type: none;
+        text-decoration: none;
         padding: 5; /* Remove default padding */
     }
 }
