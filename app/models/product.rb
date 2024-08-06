@@ -8,7 +8,7 @@ class Product < ApplicationRecord
         transactions.each do |t|
             if t.transaction_type == "IN"
                 sum += t.quantity
-            elsif transaction.transaction_type == "OUT"
+            elsif t.transaction_type == "OUT"
                 sum -= t.quantity
             end
         end
