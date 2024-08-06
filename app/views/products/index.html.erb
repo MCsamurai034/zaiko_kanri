@@ -6,7 +6,8 @@
       <th>名前</th>
       <th>説明</th>
       <th>量</th>
-      <th>Supply Id</th>
+      <th>単位</th>
+      <th>物資</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +18,8 @@
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.quantity %></td>
-        <td><%= product.supply_id %></td>
+        <td><%= product.supply.unit %></td>
+        <td><%= product.supply.name %></td>
         <td><%= link_to '詳細', product %></td>
         <td><%= link_to '修正', edit_product_path(product) %></td>
         <td><%= link_to '削除', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -3,7 +3,7 @@ class SuppliesController < ApplicationController
 
   # GET /supplies or /supplies.json
   def index
-    @supplies = Supply.all
+    @supplies = Supply.includes(:category).all
   end
 
   # GET /supplies/1 or /supplies/1.json

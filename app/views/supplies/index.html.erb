@@ -6,7 +6,7 @@
       <th>Name</th>
       <th>Desctription</th>
       <th>Unit</th>
-      <th>Category Id</th>
+      <th>Category</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
         <td><%= supply.name %></td>
         <td><%= supply.description %></td>
         <td><%= supply.unit %></td>
-        <td><%= supply.category_id %></td>
+        <td><%= supply.category.name %></td>
         <td><%= link_to 'Show', supply %></td>
         <td><%= link_to 'Edit', edit_supply_path(supply) %></td>
         <td><%= link_to 'Destroy', supply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
